@@ -1,0 +1,45 @@
+import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Compliance from './pages/Compliance';
+import Training from './pages/Training';
+import WhoWeSupport from './pages/WhoWeSupport';
+import WhyChooseUs from './pages/WhyChooseUs';
+import Contact from './pages/Contact';
+import Clients from './pages/Clients';
+import Partners from './pages/Partners';
+
+function App() {
+  useEffect(() => {
+    document.title = 'Pinpoint Finance and Compliance Ltd';
+  }, []);
+
+  return (
+    <>
+      <ScrollToTop />
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/compliance" element={<Compliance />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/who-we-support" element={<WhoWeSupport />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+export default App;
