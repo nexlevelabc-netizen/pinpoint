@@ -47,7 +47,7 @@ export default function Training() {
               </div>
             </div>
             <div className="relative">
-              <img src="/images/hero-training.jpg" alt="Training session" className="w-full h-auto rounded-3xl shadow-xl" />
+              <img src="images/hero-training.jpg" alt="Training session" className="w-full h-auto rounded-3xl shadow-xl" />
             </div>
           </div>
         </div>

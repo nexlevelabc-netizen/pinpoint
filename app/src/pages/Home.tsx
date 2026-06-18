@@ -51,7 +51,7 @@ export default function Home() {
 
             <div className="hidden lg:block animate-fade-in">
               <div className="relative">
-                <img src="/images/hero-home.jpg" alt="Professional accounting services" className="w-full h-auto rounded-3xl shadow-2xl" />
+                <img src="images/hero-home.jpg" alt="Professional accounting services" className="w-full h-auto rounded-3xl shadow-2xl" />
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl max-w-xs">
                   <p className="font-display text-xl font-semibold mb-2" style={{ color: 'var(--p-blue)' }}>Trusted by Charities</p>
                   <p className="font-body text-sm" style={{ color: 'var(--p-slate)' }}>
@@ -134,7 +134,7 @@ export default function Home() {
               <Link to="/who-we-support" className="btn-primary mt-8">See All Sectors <ArrowRight size={16} /></Link>
             </div>
             <div className="relative">
-              <img src="/images/hero-who-we-support.jpg" alt="Charities and organisations we support" className="w-full h-auto rounded-3xl shadow-xl" />
+              <img src="images/hero-who-we-support.jpg" alt="Charities and organisations we support" className="w-full h-auto rounded-3xl shadow-xl" />
             </div>
           </div>
         </div>

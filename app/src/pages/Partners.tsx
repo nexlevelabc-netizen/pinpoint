@@ -104,26 +104,29 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #1A7D73, #26A69A, #3DC9BC)' }}>
+            <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0A1628 0%, #111C38 40%, #1A2A4A 100%)' }}>
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-white/5" />
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full" style={{ background: 'radial-gradient(circle, rgba(26,155,199,0.08) 0%, transparent 70%)' }} />
+          <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full" style={{ background: 'radial-gradient(circle, rgba(45,170,122,0.06) 0%, transparent 70%)' }} />
         </div>
         <div className="container-pinpoint relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="font-body text-xs font-semibold tracking-[0.2em] uppercase text-white/90 mb-4">Collaboration</p>
+            <p className="font-body text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style={{ color: 'var(--p-teal-light)' }}>Collaboration</p>
             <h2 className="font-display text-white mb-4">Our Partnership Network</h2>
-            <p className="font-body text-white/95">We work alongside a trusted network of specialists to ensure our clients receive comprehensive support.</p>
+            <p className="font-body" style={{ color: 'rgba(255,255,255,0.85)' }}>We work alongside a trusted network of specialists to ensure our clients receive comprehensive support.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {partnerships.map((p, i) => (
-              <div key={p.title} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20 hover:bg-white/20 transition-colors">
+              <div key={p.title} className="p-8 rounded-3xl transition-all hover:-translate-y-1" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)' }}
+                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; }}>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-display font-semibold text-sm" style={{ background: 'var(--p-teal-light)', color: 'var(--p-charcoal)' }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm" style={{ background: 'var(--p-blue)', color: 'white' }}>
                     {String(i + 1).padStart(2, '0')}
                   </div>
-                  <h3 className="font-display text-lg text-white">{p.title}</h3>
+                  <h3 className="font-display text-lg" style={{ color: '#FFFFFF' }}>{p.title}</h3>
                 </div>
-                <p className="font-body text-sm text-white/95 leading-relaxed">{p.desc}</p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.8)' }}>{p.desc}</p>
               </div>
             ))}
           </div>

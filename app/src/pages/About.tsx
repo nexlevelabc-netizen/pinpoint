@@ -26,7 +26,7 @@ export default function About() {
         <div className="container-pinpoint">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative">
-              <img src="/images/hero-about.jpg" alt="Professional financial advisor" className="w-full h-auto rounded-3xl shadow-xl" />
+              <img src="images/hero-about.jpg" alt="Professional financial advisor" className="w-full h-auto rounded-3xl shadow-xl" />
             </div>
             <div>
               <p className="section-label">Our Story</p>
