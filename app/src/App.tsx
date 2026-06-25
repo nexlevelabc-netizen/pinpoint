@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     document.title = 'Pinpoint Finance and Compliance Ltd';
   }, []);
-const version = "2.0";
 
   return (
     <>
@@ -44,6 +43,3 @@ const version = "2.0";
 }
 
 export default App;
- 
-// rebuild 
-// v3 

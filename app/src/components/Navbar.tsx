@@ -71,14 +71,8 @@ export default function Navbar() {
       <nav className="container-pinpoint">
         <div className="flex items-center justify-between h-[68px]">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'var(--p-blue)' }}>
-              <span className="font-display text-white text-xl font-bold">P</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display text-lg font-bold leading-tight" style={{ color: 'var(--p-charcoal)' }}>Pinpoint</span>
-              <span className="font-body text-[9px] tracking-[0.12em] uppercase leading-tight" style={{ color: 'var(--p-slate-muted)' }}>Finance & Compliance</span>
-            </div>
+          <Link to="/" className="flex items-center">
+            <img src="images/logo-navbar.png" alt="Pinpoint Finance and Compliance Ltd" className="h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}

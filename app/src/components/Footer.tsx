@@ -21,7 +21,7 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--p-charcoal)' }}>
+    <footer style={{ background: 'linear-gradient(180deg, #0D1219 0%, #070A0F 100%)' }}>
       {/* CTA Banner */}
       <div className="border-b border-white/10">
         <div className="container-pinpoint py-12 md:py-16">
@@ -46,13 +46,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: 'var(--p-blue)' }}>
-                <span className="font-display text-white text-xl font-bold">P</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display text-lg font-bold leading-tight text-white">Pinpoint</span>
-                <span className="font-body text-[9px] tracking-[0.15em] uppercase text-white/50 leading-tight">Finance &amp; Compliance</span>
+            <Link to="/" className="block mb-6">
+              <div className="inline-block bg-white rounded-2xl px-5 py-3">
+                <img src="images/logo-navbar.png" alt="Pinpoint Finance and Compliance Ltd" className="h-12 w-auto object-contain" />
               </div>
             </Link>
             <p className="font-body text-sm text-white/60 leading-relaxed mb-6">

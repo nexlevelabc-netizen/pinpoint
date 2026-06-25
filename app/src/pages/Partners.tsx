@@ -104,7 +104,7 @@ export default function Partners() {
         </div>
       </section>
 
-            <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0A1628 0%, #111C38 40%, #1A2A4A 100%)' }}>
+      <section className="relative overflow-hidden py-20 md:py-28" style={{ background: 'linear-gradient(135deg, #0A1628 0%, #111C38 40%, #1A2A4A 100%)' }}>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full" style={{ background: 'radial-gradient(circle, rgba(26,155,199,0.08) 0%, transparent 70%)' }} />
           <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full" style={{ background: 'radial-gradient(circle, rgba(45,170,122,0.06) 0%, transparent 70%)' }} />
@@ -112,7 +112,7 @@ export default function Partners() {
         <div className="container-pinpoint relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="font-body text-[11px] font-bold tracking-[0.2em] uppercase mb-4" style={{ color: 'var(--p-teal-light)' }}>Collaboration</p>
-            <h2 className="font-display text-white mb-4">Our Partnership Network</h2>
+            <h2 className="font-display text-white mb-4" style={{ color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.2)' }}>Our Partnership Network</h2>
             <p className="font-body" style={{ color: 'rgba(255,255,255,0.85)' }}>We work alongside a trusted network of specialists to ensure our clients receive comprehensive support.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

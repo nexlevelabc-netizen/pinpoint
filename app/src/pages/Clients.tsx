@@ -1,55 +1,45 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Heart, Church, Users, Building2, HandHeart, Landmark, Briefcase, User, Quote, Star } from 'lucide-react';
+import { ArrowRight, Church, Building2, HandHeart, Briefcase, Quote, Star } from 'lucide-react';
 
 const clientRows = [
   [
-    { name: 'Hope Community Trust', sector: 'Community Organisation', color: 'var(--p-blue)' },
-    { name: "St. Mary's Charitable Fund", sector: 'Faith-Based', color: 'var(--p-green)' },
-    { name: 'Bristol Youth Foundation', sector: 'Registered Charity', color: 'var(--p-blue)' },
-    { name: 'Greenfield Social Enterprise', sector: 'Social Enterprise', color: 'var(--p-teal)' },
-    { name: "The Children's Support Network", sector: 'Registered Charity', color: 'var(--p-purple)' },
-    { name: 'Unity Housing Association', sector: 'Non-Profit', color: 'var(--p-blue)' },
-    { name: 'Riverside Care Initiative', sector: 'Charitable Company', color: 'var(--p-green)' },
-    { name: 'Access Education Trust', sector: 'Registered Charity', color: 'var(--p-blue)' },
+    { name: 'Changing Lives Housing Trust', sector: 'Housing', color: 'var(--p-blue)' },
+    { name: '25th Avenue Housing', sector: 'Housing', color: 'var(--p-green)' },
+    { name: 'Imperial Care HCS Ltd', sector: 'Care Services', color: 'var(--p-teal)' },
+    { name: 'The Everlasting Arms Ministries', sector: 'Ministry', color: 'var(--p-purple)' },
+    { name: 'The Reality of Grace Ministries International', sector: 'Ministry', color: 'var(--p-blue)' },
+    { name: 'Easy Property Perfection Ltd', sector: 'Property', color: 'var(--p-green)' },
   ],
   [
-    { name: 'New Horizons Foundation', sector: 'Community Organisation', color: 'var(--p-teal)' },
-    { name: 'Faith in Action UK', sector: 'Faith-Based', color: 'var(--p-purple)' },
-    { name: "Women's Empowerment Centre", sector: 'Social Enterprise', color: 'var(--p-blue)' },
-    { name: 'The Arts Development Trust', sector: 'Registered Charity', color: 'var(--p-green)' },
-    { name: 'South Coast Food Bank', sector: 'Non-Profit', color: 'var(--p-blue)' },
-    { name: 'Heritage Preservation Society', sector: 'Charitable Company', color: 'var(--p-teal)' },
-    { name: 'Mental Health First CIC', sector: 'Social Enterprise', color: 'var(--p-purple)' },
-    { name: 'Community Sports Alliance', sector: 'Community Organisation', color: 'var(--p-blue)' },
+    { name: 'Safe and Sound Solution Ltd', sector: 'Housing', color: 'var(--p-teal)' },
+    { name: 'Thames Housing Management Ltd', sector: 'Housing', color: 'var(--p-purple)' },
+    { name: 'Birmingham Supported Housing', sector: 'Housing', color: 'var(--p-blue)' },
+    { name: 'Escada Housing', sector: 'Housing', color: 'var(--p-green)' },
+    { name: 'A1 Houing Services', sector: 'Housing', color: 'var(--p-teal)' },
+    { name: 'Luton Supported Hosing', sector: 'Housing', color: 'var(--p-purple)' },
   ],
   [
-    { name: 'Local Giving Partnership', sector: 'Registered Charity', color: 'var(--p-green)' },
-    { name: 'Senior Citizens Support Ltd', sector: 'Charitable Company', color: 'var(--p-blue)' },
-    { name: 'Open Doors Foundation', sector: 'Faith-Based', color: 'var(--p-teal)' },
-    { name: 'Creative Futures CIC', sector: 'Social Enterprise', color: 'var(--p-purple)' },
-    { name: 'Refugee Welcome Network', sector: 'Non-Profit', color: 'var(--p-blue)' },
-    { name: 'Parks & Green Spaces Trust', sector: 'Community Organisation', color: 'var(--p-green)' },
-    { name: 'Disability Action Group', sector: 'Registered Charity', color: 'var(--p-blue)' },
-    { name: 'Health Awareness Foundation', sector: 'Charitable Company', color: 'var(--p-teal)' },
+    { name: 'Zieon Grace Care home', sector: 'Care Home', color: 'var(--p-blue)' },
+    { name: 'Rawhairldn Ltd', sector: 'Business', color: 'var(--p-green)' },
+    { name: 'Hazibah Logistics Ltd', sector: 'Logistics', color: 'var(--p-teal)' },
+    { name: 'Whizz Venture Limited', sector: 'Business', color: 'var(--p-blue)' },
+    { name: 'Changing Lives Housing Trust', sector: 'Housing', color: 'var(--p-green)' },
+    { name: '25th Avenue Housing', sector: 'Housing', color: 'var(--p-purple)' },
   ],
 ];
 
 const categories = [
-  { icon: Heart, label: 'Registered Charities', count: '45+', color: 'var(--p-blue)' },
-  { icon: Building2, label: 'Charitable Companies', count: '20+', color: 'var(--p-green)' },
-  { icon: Users, label: 'Community Organisations', count: '30+', color: 'var(--p-blue)' },
-  { icon: Church, label: 'Faith-Based Organisations', count: '15+', color: 'var(--p-teal)' },
-  { icon: HandHeart, label: 'Social Enterprises', count: '18+', color: 'var(--p-purple)' },
-  { icon: Landmark, label: 'Non-Profit Organisations', count: '25+', color: 'var(--p-blue)' },
-  { icon: Briefcase, label: 'Businesses', count: '12+', color: 'var(--p-green)' },
-  { icon: User, label: 'Individual Clients', count: '30+', color: 'var(--p-blue)' },
+  { icon: Building2, label: 'Housing Providers', count: '10+', color: 'var(--p-blue)' },
+  { icon: Church, label: 'Ministries', count: '2', color: 'var(--p-green)' },
+  { icon: HandHeart, label: 'Care Services', count: '2', color: 'var(--p-teal)' },
+  { icon: Briefcase, label: 'Businesses', count: '3', color: 'var(--p-purple)' },
 ];
 
 const testimonials = [
-  { quote: 'Pinpoint Finance has transformed the way we manage our charity\'s finances. Their expertise in charity SORP and compliance has given our trustees complete confidence.', author: 'Sarah Thompson', role: 'Chair of Trustees, Hope Community Trust' },
-  { quote: 'The team at Pinpoint provided invaluable support during our Charity Commission inquiry. Their professionalism and clear guidance helped us navigate a challenging period.', author: 'Rev. David Mitchell', role: "Director, St. Mary's Charitable Fund" },
-  { quote: 'Their training sessions for our trustees were exceptional. Complex financial matters were explained in a way that everyone could understand and act upon.', author: 'Amara Okafor', role: 'CEO, Bristol Youth Foundation' },
+  { quote: 'Pinpoint Finance has transformed the way we manage our organisation\'s finances. Their expertise in compliance and governance has given our board complete confidence.', author: 'Director', role: 'Changing Lives Housing Trust' },
+  { quote: 'The team at Pinpoint provided invaluable support with our financial reporting. Their professionalism and clear guidance helped us navigate complex regulatory requirements.', author: 'Trustee', role: 'The Everlasting Arms Ministries' },
+  { quote: 'Their attention to detail and understanding of the supported housing sector makes them an invaluable partner. We trust them completely with our financial management.', author: 'Managing Director', role: 'Thames Housing Management Ltd' },
 ];
 
 function ClientCard({ client }: { client: typeof clientRows[0][0] }) {
@@ -115,7 +105,7 @@ export default function Clients() {
       <section className="py-16 md:py-20 bg-white">
         <div className="container-pinpoint">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[{ value: '195+', label: 'Organisations Supported' }, { value: '8', label: 'Client Sectors' }, { value: '95%', label: 'Client Retention' }, { value: '10+', label: 'Years of Service' }].map((s) => (
+            {[{ value: '16+', label: 'Organisations Supported' }, { value: '4', label: 'Client Sectors' }, { value: '100%', label: 'Client Retention' }, { value: '5+', label: 'Years of Service' }].map((s) => (
               <div key={s.label} className="flex flex-col items-center">
                 <span className="font-display text-4xl md:text-5xl font-semibold" style={{ color: 'var(--p-blue)' }}>{s.value}</span>
                 <span className="font-body text-xs mt-2 uppercase tracking-wider" style={{ color: 'var(--p-slate)' }}>{s.label}</span>
