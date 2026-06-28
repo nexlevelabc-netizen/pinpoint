@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
               <div className="divider-line mb-6" />
               <div className="space-y-4 font-body leading-relaxed">
                 <p>At Pinpoint Finance and Compliance Ltd, we see ourselves as an extension of your team. We take the time to understand your organisation's mission, values and challenges.</p>
-                <p>We are committed to building long-term relationships with our clients, providing consistent support that grows and adapts as your organisation evolves.</p>
+                <p>We are committed to building long term relationships with our clients, providing consistent support that grows and adapts as your organisation evolves.</p>
               </div>
               <Link to="/contact" className="btn-primary mt-8">Start a Conversation <ArrowRight size={16} /></Link>
             </div>
