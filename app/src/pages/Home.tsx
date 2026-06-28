@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Shield, Calculator, FileText, BarChart3, GraduationCap, HeartHandshake } from 'lucide-react';
 
 const serviceColors = [
-  { bg: 'var(--p-blue)', icon: Calculator, title: 'Accounting & Bookkeeping', desc: 'Day to day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
-  { bg: 'var(--p-green)', icon: FileText, title: 'Year End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
+  { bg: 'var(--p-blue)', icon: Calculator, title: 'Accounting & Bookkeeping', desc: 'Day-to-day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
+  { bg: 'var(--p-green)', icon: FileText, title: 'Year-End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
   { bg: 'var(--p-blue)', icon: Shield, title: 'Charity Compliance', desc: 'Governance advice, regulatory submissions, internal control reviews and Charity Commission support.' },
   { bg: 'var(--p-teal)', icon: BarChart3, title: 'Audit Support', desc: 'Preparing financial statements, audit schedules and liaising with auditors and independent examiners.' },
   { bg: 'var(--p-purple)', icon: GraduationCap, title: 'Training', desc: 'Practical training for trustees and staff on charity finance, governance and compliance.' },
@@ -14,9 +14,9 @@ const sectors = [
   { label: 'Registered Charities', color: 'var(--p-blue)' },
   { label: 'Charitable Companies', color: 'var(--p-green)' },
   { label: 'Community Organisations', color: 'var(--p-blue)' },
-  { label: 'Faith Based Organisations', color: 'var(--p-teal)' },
+  { label: 'Faith-Based Organisations', color: 'var(--p-teal)' },
   { label: 'Social Enterprises', color: 'var(--p-purple)' },
-  { label: 'Non Profit Organisations', color: 'var(--p-blue)' },
+  { label: 'Non-Profit Organisations', color: 'var(--p-blue)' },
 ];
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 container-pinpoint py-16 lg:py-24">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-18 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="animate-fade-up">
               <p className="font-body text-xs font-semibold tracking-[0.2em] uppercase mb-6" style={{ color: 'rgba(255,255,255,0.95)' }}>
                 Pinpoint Finance and Compliance Ltd
@@ -115,10 +115,10 @@ export default function Home() {
       {/* Who We Support */}
       <section className="py-20 md:py-28 bg-white">
         <div className="container-pinpoint">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            <div className="lg:col-span-5">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            <div className="lg:col-span-5 flex flex-col justify-center">
               <p className="section-label">Who We Support</p>
-              <h2>Serving Charities, Non Profits & Purpose Led Businesses</h2>
+              <h2>Serving Charities, Non-Profits & Purpose-Led Businesses</h2>
               <div className="divider-line mb-6" />
               <p className="font-body leading-relaxed mb-8">
                 We work with a wide range of organisations that need more than basic accounting support. From registered charities to social enterprises, we provide tailored financial and compliance services.
@@ -134,7 +134,7 @@ export default function Home() {
               <Link to="/who-we-support" className="btn-primary mt-8">See All Sectors <ArrowRight size={16} /></Link>
             </div>
             <div className="lg:col-span-7 relative">
-              <img src="images/hero-who-we-support.jpg" alt="Charities and organisations we support" className="w-full h-auto rounded-3xl shadow-xl" />
+              <img src="images/hero-who-we-support.jpg" alt="Charities and organisations we support" className="w-full h-auto object-contain rounded-3xl shadow-xl" />
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ export default function Home() {
         <div className="container-pinpoint">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="section-label">Why Choose Us</p>
-            <h2>Professional, Reliable & Client Focused</h2>
+            <h2>Professional, Reliable & Client-Focused</h2>
             <div className="divider-line mx-auto mb-6" />
           </div>
 
@@ -181,7 +181,7 @@ export default function Home() {
             Let us help your organisation stay compliant, financially organised and accountable
           </h2>
           <p className="font-body text-white/95 mb-8 max-w-xl mx-auto">
-            Whether you need ongoing bookkeeping, year end accounts, compliance advice or training, we can provide a service tailored to your needs.
+            Whether you need ongoing bookkeeping, year-end accounts, compliance advice or training, we can provide a service tailored to your needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105" style={{ background: 'white', color: 'var(--p-blue)' }}>

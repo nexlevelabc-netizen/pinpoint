@@ -30,7 +30,7 @@ export default function About() {
             </div>
             <div>
               <p className="section-label">Our Story</p>
-              <h2>Professional Support for Purpose Driven Organisations</h2>
+              <h2>Professional Support for Purpose-Driven Organisations</h2>
               <div className="divider-line mb-6" />
               <div className="space-y-4 font-body leading-relaxed">
                 <p>Pinpoint Finance and Compliance Ltd is a company registered in England and Wales, providing professional accounting, financial management and compliance services. Our specialist focus is on charities and non-profit organisations.</p>

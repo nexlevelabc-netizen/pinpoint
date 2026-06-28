@@ -6,16 +6,16 @@ const types = [
   { icon: Heart, title: 'Registered Charities', desc: 'We support registered charities of all sizes with their accounting, compliance and governance needs, including Charity SORP reporting and Charity Commission filings.', color: 'var(--p-blue)' },
   { icon: Building2, title: 'Charitable Companies', desc: 'Charitable companies limited by guarantee receive specialist support for both charity law and company law compliance requirements.', color: 'var(--p-green)' },
   { icon: Users, title: 'Community Organisations', desc: 'Community groups and organisations benefit from our practical approach to financial management and compliance support.', color: 'var(--p-blue)' },
-  { icon: Church, title: 'Faith Based Organisations', desc: 'We work with churches, mosques, temples and other faith-based organisations, understanding their unique governance and financial structures.', color: 'var(--p-teal)' },
+  { icon: Church, title: 'Faith-Based Organisations', desc: 'We work with churches, mosques, temples and other faith-based organisations, understanding their unique governance and financial structures.', color: 'var(--p-teal)' },
   { icon: HandHeart, title: 'Social Enterprises', desc: 'Social enterprises with charitable objectives receive tailored support that balances commercial and charitable considerations.', color: 'var(--p-purple)' },
-  { icon: Landmark, title: 'Non Profit Organisations', desc: 'Non-profits that are not formally registered charities also benefit from our financial management and compliance expertise.', color: 'var(--p-blue)' },
+  { icon: Landmark, title: 'Non-Profit Organisations', desc: 'Non-profits that are not formally registered charities also benefit from our financial management and compliance expertise.', color: 'var(--p-blue)' },
   { icon: Briefcase, title: 'Small & Medium-Sized Businesses', desc: 'Beyond the charity sector, we provide accounting and financial support to businesses that need clear, dependable services.', color: 'var(--p-green)' },
   { icon: User, title: 'Individuals', desc: 'Individuals requiring accounting or financial support can rely on our professional, confidential service.', color: 'var(--p-blue)' },
 ];
 
 const needs = [
   { title: 'Ongoing Bookkeeping', desc: 'Regular support to keep your financial records accurate and up to date.' },
-  { title: 'Year End Accounts', desc: 'Preparation of annual accounts and financial statements.' },
+  { title: 'Year-End Accounts', desc: 'Preparation of annual accounts and financial statements.' },
   { title: 'Compliance Advice', desc: 'Guidance on meeting your regulatory and governance obligations.' },
   { title: 'Training', desc: 'Building knowledge and confidence in your trustees and staff.' },
   { title: 'Regulatory Matters', desc: 'Support with Charity Commission inquiries and other regulatory issues.' },
@@ -34,7 +34,7 @@ export default function WhoWeSupport() {
             <h2>Organisations We Work With</h2>
             <div className="divider-line mx-auto mb-6" />
             <p className="font-body">
-              Whether your organisation needs ongoing bookkeeping, year end accounts, compliance advice, training or support with regulatory matters, we can provide a service tailored to your needs.
+              Whether your organisation needs ongoing bookkeeping, year-end accounts, compliance advice, training or support with regulatory matters, we can provide a service tailored to your needs.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
