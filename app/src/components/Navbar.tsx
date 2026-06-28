@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail, Search } from 'lucide-react';
+import { useContactPanel } from './ContactPanelContext';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -25,6 +26,7 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+  const { openPanel } = useContactPanel();
 
   useEffect(() => {
     setIsOpen(false);
@@ -125,7 +127,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <Link to="/contact" className="btn-primary text-xs px-5 py-2.5">Get in Touch</Link>
+            <button onClick={openPanel} className="btn-primary text-xs px-5 py-2.5">Get in Touch</button>
           </div>
 
           <button onClick={() => setIsOpen(!isOpen)} className="xl:hidden p-2" style={{ color: 'var(--p-charcoal)' }} aria-label="Toggle menu">
@@ -156,7 +158,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <Link to="/contact" className="btn-primary mt-4 justify-center text-xs">Get in Touch</Link>
+          <button onClick={() => { openPanel(); setIsOpen(false); }} className="btn-primary mt-4 justify-center text-xs w-full">Get in Touch</button>
         </div>
       </div>
     </header>
