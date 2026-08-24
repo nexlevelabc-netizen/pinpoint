@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Mail, Search } from 'lucide-react';
+import { Menu, X, ChevronDown, Mail, Search } from 'lucide-react';
 import { useContactPanel } from './ContactPanelContext';
 
 const navLinks = [
@@ -24,9 +24,23 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
   const { openPanel } = useContactPanel();
+
+  const searchResults = [
+    { label: 'Home', href: '/', desc: 'Welcome to Pinpoint Finance' },
+    { label: 'About Us', href: '/about', desc: 'Learn about our team and mission' },
+    { label: 'Our Services', href: '/services', desc: 'Accounting, compliance & training' },
+    { label: 'Charity Compliance', href: '/compliance', desc: 'Regulatory guidance for charities' },
+    { label: 'Training', href: '/training', desc: 'Workshops and capacity building' },
+    { label: 'Who We Support', href: '/who-we-support', desc: 'Charities, non-profits & purpose-led orgs' },
+    { label: 'Clients', href: '/clients', desc: 'Organisations we work with' },
+    { label: 'Partners', href: '/partners', desc: 'Professional memberships & affiliations' },
+    { label: 'Why Choose Us', href: '/why-choose-us', desc: 'What sets us apart' },
+  ].filter(r => searchQuery.length > 0 && (r.label.toLowerCase().includes(searchQuery.toLowerCase()) || r.desc.toLowerCase().includes(searchQuery.toLowerCase())));
 
   useEffect(() => {
     setIsOpen(false);
@@ -53,15 +67,16 @@ export default function Navbar() {
       <div className="hidden lg:block" style={{ background: 'var(--p-blue)' }}>
         <div className="container-pinpoint flex items-center justify-between h-8">
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors" aria-label="Search">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors"
+              aria-label="Search"
+            >
               <Search size={12} />
               <span className="font-body text-[11px] tracking-wide">Search</span>
             </button>
           </div>
           <div className="flex items-center gap-6">
-            <a href="tel:+440000000000" className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors">
-              <Phone size={11} /> <span>+44 (0) 0000 000 000</span>
-            </a>
             <a href="mailto:info@pinpointfinance.co.uk" className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors">
               <Mail size={11} /> <span>info@pinpointfinance.co.uk</span>
             </a>
@@ -161,6 +176,49 @@ export default function Navbar() {
           <button onClick={() => { openPanel(); setIsOpen(false); }} className="btn-primary mt-4 justify-center text-xs w-full">Get in Touch</button>
         </div>
       </div>
+
+      {/* Search Overlay */}
+      {searchOpen && (
+        <div className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-32 px-4" onClick={() => setSearchOpen(false)}>
+          <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-3 px-6 py-4 border-b" style={{ borderColor: 'var(--p-border)' }}>
+              <Search size={20} style={{ color: 'var(--p-slate-muted)' }} />
+              <input
+                type="text"
+                autoFocus
+                placeholder="Search pages..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 font-body text-base outline-none"
+                style={{ color: 'var(--p-charcoal)' }}
+              />
+              <button onClick={() => setSearchOpen(false)} className="p-1 rounded-full hover:bg-gray-100 transition-colors">
+                <X size={20} style={{ color: 'var(--p-slate-muted)' }} />
+              </button>
+            </div>
+            <div className="max-h-80 overflow-y-auto">
+              {searchQuery.length === 0 ? (
+                <p className="font-body text-sm text-center py-8" style={{ color: 'var(--p-slate-muted)' }}>Type to search pages...</p>
+              ) : searchResults.length === 0 ? (
+                <p className="font-body text-sm text-center py-8" style={{ color: 'var(--p-slate-muted)' }}>No results found for "{searchQuery}"</p>
+              ) : (
+                searchResults.map((r) => (
+                  <Link
+                    key={r.href}
+                    to={r.href}
+                    onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
+                    className="flex flex-col gap-0.5 px-6 py-3 hover:bg-gray-50 transition-colors border-b last:border-b-0"
+                    style={{ borderColor: 'var(--p-border)' }}
+                  >
+                    <span className="font-body text-sm font-semibold" style={{ color: 'var(--p-charcoal)' }}>{r.label}</span>
+                    <span className="font-body text-xs" style={{ color: 'var(--p-slate-muted)' }}>{r.desc}</span>
+                  </Link>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
