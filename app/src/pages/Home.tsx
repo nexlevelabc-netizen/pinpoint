@@ -1,13 +1,23 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Shield, Calculator, FileText, BarChart3, GraduationCap, HeartHandshake } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useContactPanel } from '../components/ContactPanelContext';
+
+function GetInTouchButton() {
+  const { openPanel } = useContactPanel();
+  return (
+    <button onClick={openPanel} className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105 bg-white" style={{ color: 'var(--p-blue)' }}>
+      Get in Touch
+    </button>
+  );
+}
 
 const serviceColors = [
-  { bg: 'var(--p-blue)', icon: Calculator, title: 'Accounting & Bookkeeping', desc: 'Day-to-day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
-  { bg: 'var(--p-green)', icon: FileText, title: 'Year-End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
-  { bg: 'var(--p-blue)', icon: Shield, title: 'Charity Compliance', desc: 'Governance advice, regulatory submissions, internal control reviews and Charity Commission support.' },
-  { bg: 'var(--p-teal)', icon: BarChart3, title: 'Audit Support', desc: 'Preparing financial statements, audit schedules and liaising with auditors and independent examiners.' },
-  { bg: 'var(--p-purple)', icon: GraduationCap, title: 'Training', desc: 'Practical training for trustees and staff on charity finance, governance and compliance.' },
-  { bg: 'var(--p-blue)', icon: HeartHandshake, title: 'Governance Support', desc: 'Policy development, procedure reviews and strengthening your governance framework.' },
+  { bg: 'var(--p-blue)', title: 'Accounting & Bookkeeping', desc: 'Day-to-day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
+  { bg: 'var(--p-green)', title: 'Year-End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
+  { bg: 'var(--p-blue)', title: 'Charity Compliance', desc: 'Governance advice, regulatory submissions, internal control reviews and Charity Commission support.' },
+  { bg: 'var(--p-teal)', title: 'Audit Support', desc: 'Preparing financial statements, audit schedules and liaising with auditors and independent examiners.' },
+  { bg: 'var(--p-purple)', title: 'Training', desc: 'Practical training for trustees and staff on charity finance, governance and compliance.' },
+  { bg: 'var(--p-blue)', title: 'Governance Support', desc: 'Policy development, procedure reviews and strengthening your governance framework.' },
 ];
 
 const sectors = [
@@ -45,7 +55,7 @@ export default function Home() {
                 <Link to="/services" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105" style={{ background: 'var(--p-blue)', color: 'white' }}>
                   Our Services <ArrowRight size={16} />
                 </Link>
-                <Link to="/contact" className="btn-white">Get in Touch</Link>
+                <GetInTouchButton />
               </div>
             </div>
 
@@ -98,8 +108,13 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceColors.map((service, i) => (
               <Link key={service.title} to={i === 4 ? '/training' : i === 2 ? '/compliance' : '/services'} className="bg-white rounded-2xl p-8 card-hover group" style={{ borderTop: `4px solid ${service.bg}` }}>
-                <div className="service-icon rounded-xl mb-6 transition-transform group-hover:scale-105" style={{ background: service.bg }}>
-                  <service.icon size={24} />
+                <div className="mb-6 transition-transform group-hover:scale-105">
+                  {i === 0 && <img src="images/home-accounting.png" alt="Accounting" className="w-20 h-20 object-contain" />}
+                  {i === 1 && <img src="images/home-accounts.png" alt="Accounts" className="w-20 h-20 object-contain" />}
+                  {i === 2 && <img src="images/home-compliance.png" alt="Compliance" className="w-20 h-20 object-contain" />}
+                  {i === 3 && <img src="images/home-audit.png" alt="Audit" className="w-20 h-20 object-contain" />}
+                  {i === 4 && <img src="images/home-training.png" alt="Training" className="w-20 h-20 object-contain" />}
+                  {i === 5 && <img src="images/home-governance.png" alt="Governance" className="w-20 h-20 object-contain" />}
                 </div>
                 <h3 className="font-display text-xl mb-3">{service.title}</h3>
                 <p className="font-body text-sm leading-relaxed mb-4">{service.desc}</p>
@@ -184,9 +199,7 @@ export default function Home() {
             Whether you need ongoing bookkeeping, year-end accounts, compliance advice or training, we can provide a service tailored to your needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105" style={{ background: 'white', color: 'var(--p-blue)' }}>
-              Contact Us <ArrowRight size={16} />
-            </Link>
+            <GetInTouchButton />
             <Link to="/services" className="btn-white">Explore Services</Link>
           </div>
         </div>

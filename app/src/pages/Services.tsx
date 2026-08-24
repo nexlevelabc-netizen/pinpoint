@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Calculator, FileText, Settings, BarChart3 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 
 const serviceColors = ['var(--p-blue)', 'var(--p-green)', 'var(--p-blue)', 'var(--p-teal)'];
 
 const categories = [
   {
-    icon: Calculator, title: 'Accounting and Bookkeeping',
+    title: 'Accounting and Bookkeeping',
     desc: 'Reliable accounting and bookkeeping support to help organisations maintain accurate and up-to-date financial records.',
     items: ['Day-to-day bookkeeping', 'Bank reconciliations', 'Management accounts', 'Financial reporting', 'Payroll support', 'VAT support where applicable', 'Review of income and expenditure', 'Monitoring of restricted and unrestricted funds', 'Support with financial records and audit preparation'],
   },
   {
-    icon: FileText, title: 'Year-End Accounts and Financial Statements',
+    title: 'Year-End Accounts and Financial Statements',
     desc: 'Support with the preparation of year-end accounts and financial statements in line with Charity SORP, Companies House and Charity Commission requirements.',
     items: ['Preparation of annual accounts', 'Charity accounts in line with SORP where applicable', 'Trustee annual report support', 'Independent examination preparation', 'Audit file preparation', 'Liaison with accountants, independent examiners or auditors', 'Review of financial disclosures', 'Support with Companies House and Charity Commission filing requirements'],
   },
   {
-    icon: Settings, title: 'Accounting System Setup and Support',
+    title: 'Accounting System Setup and Support',
     desc: 'Help organisations set up, review and improve their accounting platforms for more effective financial management.',
     items: ['Setting up accounting software', 'Creating chart of accounts', 'Setting up departments, funds and projects', 'Designing reporting structures', 'Training staff on accounting systems', 'Reviewing existing accounting processes', 'Improving bookkeeping workflows', 'Supporting cloud-based accounting solutions'],
   },
   {
-    icon: BarChart3, title: 'Audit Support for Year-End Financial Statements',
+    title: 'Audit Support for Year-End Financial Statements',
     desc: 'Support to help charities and organisations prepare for the year-end audit or independent examination process.',
     items: ['Preparing year-end financial statements', 'Preparing audit schedules and supporting documents', 'Reviewing accounting records before audit', 'Reconciling bank accounts, control accounts and key balances', 'Preparing fixed asset registers and depreciation schedules', 'Supporting restricted and unrestricted fund reporting', 'Preparing working papers for auditors or independent examiners', 'Liaising with auditors, independent examiners and accountants', 'Responding to audit queries', 'Helping management and trustees address audit findings and recommendations'],
   },
@@ -30,7 +30,7 @@ const categories = [
 export default function Services() {
   return (
     <>
-      <PageHero title="Our Services" subtitle="Professional accounting, financial management and compliance services tailored to charities, non-profits and purpose-led businesses." variant="blue"
+      <PageHero title="Our Services" subtitle="Professional accounting, financial management and compliance services tailored to charities, non-profits and purpose-led businesses." variant="blue" bgImage="images/hero-services.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Our Services', href: '/services' }]} />
 
       <section className="py-16 md:py-20 bg-white">
@@ -50,8 +50,11 @@ export default function Services() {
             {categories.map((cat, i) => (
               <div key={cat.title} className="grid lg:grid-cols-2 gap-10 items-start">
                 <div className={i % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6" style={{ background: serviceColors[i % 4] }}>
-                    <cat.icon size={24} />
+                  <div className="mb-6">
+                    {i === 0 && <img src="images/services-accounting.png" alt="Accounting" className="w-26 h-26 object-contain" />}
+                    {i === 1 && <img src="images/services-year-end.png" alt="Year-End" className="w-26 h-26 object-contain" />}
+                    {i === 2 && <img src="images/services-system.png" alt="System" className="w-26 h-26 object-contain" />}
+                    {i === 3 && <img src="images/services-audit.png" alt="Audit" className="w-26 h-26 object-contain" />}
                   </div>
                   <h2 className="font-display text-2xl md:text-3xl mb-4">{cat.title}</h2>
                   <div className="divider-line mb-6" />

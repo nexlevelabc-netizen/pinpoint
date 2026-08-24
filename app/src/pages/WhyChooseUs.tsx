@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Users, FileCheck, Target, Shield, Clock, MessageSquare, Lock } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import PageHero from '../components/PageHero';
 
 const reasons = [
-  { icon: Target, title: 'Specialist Understanding', desc: 'We have specialist understanding of charity and non-profit accounting, including Charity SORP, restricted funds and the unique regulatory environment.', color: 'var(--p-blue)' },
-  { icon: Shield, title: 'Compliance Knowledge', desc: 'Our practical knowledge of compliance and governance requirements helps organisations meet their obligations confidently.', color: 'var(--p-green)' },
-  { icon: Lock, title: 'Professional & Confidential', desc: 'We deliver a professional and confidential service, respecting the sensitive nature of our clients\' financial and operational information.', color: 'var(--p-blue)' },
-  { icon: MessageSquare, title: 'Clear Communication', desc: 'We explain complex financial matters in clear, understandable language, ensuring trustees and staff are well informed.', color: 'var(--p-teal)' },
-  { icon: Users, title: 'Tailored Support', desc: 'Every organisation is different. We provide tailored support based on each client\'s needs, size and complexity.', color: 'var(--p-purple)' },
-  { icon: FileCheck, title: 'Comprehensive Service', desc: 'From routine bookkeeping to complex regulatory matters, we support organisations across the full range of financial and compliance needs.', color: 'var(--p-blue)' },
-  { icon: Award, title: 'Commitment to Improvement', desc: 'We are committed to helping organisations improve their financial control, governance and accountability over time.', color: 'var(--p-green)' },
-  { icon: Clock, title: 'Responsive & Reliable', desc: 'We respond to our clients\' needs promptly and deliver our services reliably, meeting agreed deadlines and commitments.', color: 'var(--p-blue)' },
+  { title: 'Specialist Understanding', desc: 'We have specialist understanding of charity and non-profit accounting, including Charity SORP, restricted funds and the unique regulatory environment.', color: 'var(--p-blue)' },
+  { title: 'Compliance Knowledge', desc: 'Our practical knowledge of compliance and governance requirements helps organisations meet their obligations confidently.', color: 'var(--p-green)' },
+  { title: 'Professional & Confidential', desc: 'We deliver a professional and confidential service, respecting the sensitive nature of our clients\' financial and operational information.', color: 'var(--p-blue)' },
+  { title: 'Clear Communication', desc: 'We explain complex financial matters in clear, understandable language, ensuring trustees and staff are well informed.', color: 'var(--p-teal)' },
+  { title: 'Tailored Support', desc: 'Every organisation is different. We provide tailored support based on each client\'s needs, size and complexity.', color: 'var(--p-purple)' },
+  { title: 'Comprehensive Service', desc: 'From routine bookkeeping to complex regulatory matters, we support organisations across the full range of financial and compliance needs.', color: 'var(--p-blue)' },
+  { title: 'Commitment to Improvement', desc: 'We are committed to helping organisations improve their financial control, governance and accountability over time.', color: 'var(--p-green)' },
+  { title: 'Responsive & Reliable', desc: 'We respond to our clients\' needs promptly and deliver our services reliably, meeting agreed deadlines and commitments.', color: 'var(--p-blue)' },
 ];
 
 const steps = [
@@ -23,7 +23,7 @@ const steps = [
 export default function WhyChooseUs() {
   return (
     <>
-      <PageHero title="Why Choose Us" subtitle="Choosing the right finance and compliance support is important. At Pinpoint Finance and Compliance Ltd, we provide a professional service built around accuracy, reliability and practical guidance." variant="blue"
+      <PageHero title="Why Choose Us" subtitle="Choosing the right finance and compliance support is important. At Pinpoint Finance and Compliance Ltd, we provide a professional service built around accuracy, reliability and practical guidance." variant="blue" bgImage="images/hero-why-choose.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Why Choose Us', href: '/why-choose-us' }]} />
 
       <section className="py-16 md:py-20 bg-white">
@@ -47,10 +47,17 @@ export default function WhyChooseUs() {
             <div className="divider-line mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {reasons.map((r) => (
+            {reasons.map((r, i) => (
               <div key={r.title} className="bg-white rounded-2xl p-8 card-hover">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white mb-5" style={{ background: r.color }}>
-                  <r.icon size={20} />
+                <div className="mb-5">
+                  {i === 0 && <img src="images/why-specialist.png" alt="Specialist" className="w-20 h-20 object-contain" />}
+                  {i === 1 && <img src="images/why-compliance.png" alt="Compliance" className="w-20 h-20 object-contain" />}
+                  {i === 2 && <img src="images/why-confidential.png" alt="Confidential" className="w-20 h-20 object-contain" />}
+                  {i === 3 && <img src="images/why-communication.png" alt="Communication" className="w-20 h-20 object-contain" />}
+                  {i === 4 && <img src="images/why-tailored.png" alt="Tailored" className="w-20 h-20 object-contain" />}
+                  {i === 5 && <img src="images/why-comprehensive.png" alt="Comprehensive" className="w-20 h-20 object-contain" />}
+                  {i === 6 && <img src="images/why-improvement.png" alt="Improvement" className="w-20 h-20 object-contain" />}
+                  {i === 7 && <img src="images/why-reliable.png" alt="Reliable" className="w-20 h-20 object-contain" />}
                 </div>
                 <h3 className="font-display text-lg mb-2">{r.title}</h3>
                 <p className="font-body text-sm leading-relaxed">{r.desc}</p>

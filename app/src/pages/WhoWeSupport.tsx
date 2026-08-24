@@ -24,7 +24,7 @@ const needs = [
 export default function WhoWeSupport() {
   return (
     <>
-      <PageHero title="Who We Support" subtitle="We work with a wide range of clients across the charity and non-profit sector, as well as businesses and individuals who need professional financial support." variant="teal"
+      <PageHero title="Who We Support" subtitle="We work with a wide range of clients across the charity and non-profit sector, as well as businesses and individuals who need professional financial support." variant="teal" bgImage="images/hero-who-we-support.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Who We Support', href: '/who-we-support' }]} />
 
       <section className="py-16 md:py-24 bg-white">

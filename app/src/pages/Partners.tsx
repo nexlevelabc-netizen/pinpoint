@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Award, Shield, Handshake, BookOpen, Globe, Users, Heart, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import PageHero from '../components/PageHero';
 
-const bodies = [
-  { icon: Award, name: 'ICAEW', fullName: 'Institute of Chartered Accountants in England and Wales', desc: 'We adhere to the professional standards and ethical guidelines set by the ICAEW, ensuring the highest quality of accountancy services.', color: 'var(--p-blue)' },
-  { icon: Shield, name: 'ACCA', fullName: 'Association of Chartered Certified Accountants', desc: 'Our ACCA affiliation reflects our commitment to global accounting standards and continuous professional development.', color: 'var(--p-green)' },
-  { icon: BookOpen, name: 'AAT', fullName: 'Association of Accounting Technicians', desc: 'We support the AAT\'s mission to promote the highest standards of accounting technician practice.', color: 'var(--p-blue)' },
-  { icon: Award, name: 'CIMA', fullName: 'Chartered Institute of Management Accountants', desc: 'Our CIMA connection ensures we bring management accounting expertise to support organisational decision-making.', color: 'var(--p-teal)' },
-];
-
 const affiliations = [
-  { icon: Heart, name: 'Charity Finance Group', desc: 'Members of the leading network for charity finance professionals, keeping us at the forefront of sector developments.', color: 'var(--p-blue)' },
-  { icon: Users, name: 'NCVO', fullName: 'National Council for Voluntary Organisations', desc: 'We align with NCVO\'s vision for a thriving voluntary sector, supporting their guidance and best practice frameworks.', color: 'var(--p-green)' },
-  { icon: Globe, name: 'NAVCA', fullName: 'National Association for Voluntary and Community Action', desc: 'Our connection with NAVCA strengthens our understanding of local infrastructure and community-level support.', color: 'var(--p-blue)' },
-  { icon: Handshake, name: 'Charity Commission', desc: 'We work within the Charity Commission\'s regulatory framework, supporting our clients to meet all compliance requirements.', color: 'var(--p-teal)' },
+  { name: 'Charity Finance Group', desc: 'Members of the leading network for charity finance professionals, keeping us at the forefront of sector developments.', color: 'var(--p-blue)' },
+  { name: 'NCVO', fullName: 'National Council for Voluntary Organisations', desc: 'We align with NCVO\'s vision for a thriving voluntary sector, supporting their guidance and best practice frameworks.', color: 'var(--p-green)' },
+  { name: 'NAVCA', fullName: 'National Association for Voluntary and Community Action', desc: 'Our connection with NAVCA strengthens our understanding of local infrastructure and community-level support.', color: 'var(--p-blue)' },
+  { name: 'Charity Commission', desc: 'We work within the Charity Commission\'s regulatory framework, supporting our clients to meet all compliance requirements.', color: 'var(--p-teal)' },
 ];
 
 const partnerships = [
@@ -37,7 +30,7 @@ const commitments = [
 export default function Partners() {
   return (
     <>
-      <PageHero title="Partners & Accreditations" subtitle="We are proud to be affiliated with leading professional bodies and organisations in the accountancy and charity sectors." variant="blue"
+      <PageHero title="Partners & Accreditations" subtitle="We are proud to be affiliated with leading professional bodies and organisations in the accountancy and charity sectors." variant="blue" bgImage="images/hero-partners.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Partners', href: '/partners' }]} />
 
       <section className="py-16 md:py-20 bg-white">
@@ -53,47 +46,21 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24" style={{ background: 'var(--p-surface)' }}>
-        <div className="container-pinpoint">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="section-label">Professional Bodies</p>
-            <h2>Accountancy & Professional Memberships</h2>
-            <div className="divider-line mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {bodies.map((b) => (
-              <div key={b.name} className="bg-white rounded-2xl p-8 card-hover">
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: b.color }}>
-                    <b.icon size={22} />
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <h3 className="font-display text-xl">{b.name}</h3>
-                      <span className="px-3 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider text-white" style={{ background: b.color }}>Member</span>
-                    </div>
-                    <p className="font-body text-xs mb-3" style={{ color: 'var(--p-slate)' }}>{b.fullName}</p>
-                    <p className="font-body text-sm leading-relaxed">{b.desc}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 md:py-24 bg-white">
         <div className="container-pinpoint">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="section-label">Charity Sector</p>
-            <h2>Charity & Voluntary Sector Affiliations</h2>
+            <h2>Charity & Voluntary Sector</h2>
             <div className="divider-line mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {affiliations.map((a) => (
+            {affiliations.map((a, i) => (
               <div key={a.name} className="p-8 rounded-2xl text-center card-hover" style={{ background: 'var(--p-surface)' }}>
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-5 mx-auto" style={{ background: a.color }}>
-                  <a.icon size={22} />
+                <div className="mb-5 mx-auto flex justify-center">
+                  {i === 0 && <img src="images/partners-charity-finance.png" alt="Charity Finance Group" className="w-26 h-26 object-contain" />}
+                  {i === 1 && <img src="images/partners-ncvo.png" alt="NCVO" className="w-26 h-26 object-contain" />}
+                  {i === 2 && <img src="images/partners-navca.png" alt="NAVCA" className="w-26 h-26 object-contain" />}
+                  {i === 3 && <img src="images/partners-commission.png" alt="Charity Commission" className="w-26 h-26 object-contain" />}
                 </div>
                 <h3 className="font-display text-lg mb-2">{a.name}</h3>
                 {a.fullName && <p className="font-body text-[10px] uppercase tracking-wider mb-3" style={{ color: 'var(--p-slate)' }}>{a.fullName}</p>}
@@ -153,7 +120,9 @@ export default function Partners() {
               </div>
             </div>
             <div className="rounded-3xl p-10" style={{ background: 'var(--p-blue-soft)' }}>
-              <Award size={40} className="mb-6" style={{ color: 'var(--p-blue)' }} />
+              <div className="mb-6">
+                <img src="images/partners-network.png" alt="Network" className="w-26 h-26 object-contain" />
+              </div>
               <h3 className="font-display text-2xl mb-4">Why Our Memberships Matter to You</h3>
               <div className="space-y-4 font-body leading-relaxed">
                 <p>When you work with Pinpoint Finance and Compliance Ltd, you benefit from our collective professional knowledge and the rigorous standards set by our accrediting bodies.</p>

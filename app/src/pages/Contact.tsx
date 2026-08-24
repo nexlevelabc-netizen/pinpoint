@@ -19,7 +19,7 @@ export default function Contact() {
 
   return (
     <>
-      <PageHero title="Contact Us" subtitle="For professional accounting, bookkeeping, financial reporting or compliance support, please get in touch. We would be pleased to discuss your organisation's needs." variant="blue"
+      <PageHero title="Contact Us" subtitle="For professional accounting, bookkeeping, financial reporting or compliance support, please get in touch. We would be pleased to discuss your organisation's needs." variant="blue" bgImage="images/hero-contact.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact Us', href: '/contact' }]} />
 
       {/* Contact cards */}

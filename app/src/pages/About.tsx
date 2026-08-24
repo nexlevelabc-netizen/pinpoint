@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Target, Eye, Heart, Award, Users, ClipboardCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { useContactPanel } from '../components/ContactPanelContext';
 import PageHero from '../components/PageHero';
 
 const values = [
-  { icon: Target, title: 'Accuracy', desc: 'We ensure all financial records, reports and compliance documents are prepared with precision and attention to detail.', color: 'var(--p-blue)' },
-  { icon: Eye, title: 'Transparency', desc: 'We maintain clear communication with our clients, ensuring trustees and management understand their financial position.', color: 'var(--p-green)' },
-  { icon: Heart, title: 'Commitment', desc: 'We are committed to helping organisations improve their financial control, governance and accountability.', color: 'var(--p-blue)' },
-  { icon: Award, title: 'Professionalism', desc: 'We deliver a confidential, professional service built on reliability, practical guidance and sector expertise.', color: 'var(--p-teal)' },
+  { title: 'Accuracy', desc: 'We ensure all financial records, reports and compliance documents are prepared with precision and attention to detail.', color: 'var(--p-blue)' },
+  { title: 'Transparency', desc: 'We maintain clear communication with our clients, ensuring trustees and management understand their financial position.', color: 'var(--p-green)' },
+  { title: 'Commitment', desc: 'We are committed to helping organisations improve their financial control, governance and accountability.', color: 'var(--p-blue)' },
+  { title: 'Professionalism', desc: 'We deliver a confidential, professional service built on reliability, practical guidance and sector expertise.', color: 'var(--p-teal)' },
 ];
 
 const steps = [
@@ -16,10 +16,23 @@ const steps = [
   { num: '04', title: 'Ongoing Improvement', desc: 'Our aim is to provide support that is accurate, useful and relevant, helping your organisation improve over time.', color: 'var(--p-teal)' },
 ];
 
+function StartConversationButton() {
+  const { openPanel } = useContactPanel();
+  return (
+    <button
+      onClick={openPanel}
+      className="inline-flex items-center gap-2 font-body mt-4"
+      style={{ color: 'var(--p-teal-light)' }}
+    >
+      Start a conversation <ArrowRight size={16} />
+    </button>
+  );
+}
+
 export default function About() {
   return (
     <>
-      <PageHero title="About Us" subtitle="At Pinpoint Finance and Compliance Ltd, we work with organisations that need more than basic accounting support." variant="blue"
+      <PageHero title="About Us" subtitle="At Pinpoint Finance and Compliance Ltd, we work with organisations that need more than basic accounting support." variant="blue" bgImage="images/hero-about.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About Us', href: '/about' }]} />
 
       <section className="py-20 md:py-28 bg-white">
@@ -66,10 +79,13 @@ export default function About() {
             <div className="divider-line mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v) => (
+            {values.map((v, i) => (
               <div key={v.title} className="bg-white rounded-2xl p-8 text-center card-hover">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 mx-auto" style={{ background: v.color }}>
-                  <v.icon size={22} />
+                <div className="mb-6 mx-auto flex justify-center">
+                  {i === 0 && <img src="images/about-accuracy.png" alt="Accuracy" className="w-22 h-22 object-contain" />}
+                  {i === 1 && <img src="images/about-transparency.png" alt="Transparency" className="w-22 h-22 object-contain" />}
+                  {i === 2 && <img src="images/about-commitment.png" alt="Commitment" className="w-22 h-22 object-contain" />}
+                  {i === 3 && <img src="images/about-professionalism.png" alt="Professionalism" className="w-22 h-22 object-contain" />}
                 </div>
                 <h3 className="font-display text-lg mb-3">{v.title}</h3>
                 <p className="font-body text-sm leading-relaxed">{v.desc}</p>
@@ -108,14 +124,17 @@ export default function About() {
               <div className="divider-line mb-6" />
               <div className="space-y-6">
                 {[
-                  { icon: ClipboardCheck, title: 'Compliance Knowledge', desc: 'We understand charity law, SORP requirements and Charity Commission regulations.', color: 'var(--p-blue)' },
-                  { icon: Users, title: 'Governance Expertise', desc: 'We support trustees in fulfilling their duties with confidence and clarity.', color: 'var(--p-green)' },
-                  { icon: Award, title: 'Audit Experience', desc: 'We prepare organisations thoroughly for audit and independent examination.', color: 'var(--p-blue)' },
-                  { icon: Target, title: 'Tailored Solutions', desc: 'Every organisation is different. We adapt our services to your specific circumstances.', color: 'var(--p-teal)' },
-                ].map((item) => (
+                  { title: 'Compliance Knowledge', desc: 'We understand charity law, SORP requirements and Charity Commission regulations.', color: 'var(--p-blue)' },
+                  { title: 'Governance Expertise', desc: 'We support trustees in fulfilling their duties with confidence and clarity.', color: 'var(--p-green)' },
+                  { title: 'Audit Experience', desc: 'We prepare organisations thoroughly for audit and independent examination.', color: 'var(--p-blue)' },
+                  { title: 'Tailored Solutions', desc: 'Every organisation is different. We adapt our services to your specific circumstances.', color: 'var(--p-teal)' },
+                ].map((item, i) => (
                   <div key={item.title} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white shrink-0" style={{ background: item.color }}>
-                      <item.icon size={20} />
+                    <div className="shrink-0">
+                      {i === 0 && <img src="images/about-compliance.png" alt="Compliance" className="w-20 h-20 object-contain" />}
+                      {i === 1 && <img src="images/about-governance.png" alt="Governance" className="w-20 h-20 object-contain" />}
+                      {i === 2 && <img src="images/about-audit.png" alt="Audit" className="w-20 h-20 object-contain" />}
+                      {i === 3 && <img src="images/about-tailored.png" alt="Tailored" className="w-20 h-20 object-contain" />}
                     </div>
                     <div>
                       <h4 className="font-display text-lg mb-1">{item.title}</h4>
@@ -128,7 +147,7 @@ export default function About() {
             <div className="rounded-3xl p-10 lg:p-12 text-white flex flex-col justify-center" style={{ background: 'linear-gradient(135deg, #0F7EA5, #1A9BC7)' }}>
               <p className="font-body text-xs font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: 'rgba(255,255,255,0.95)' }}>Our Commitment</p>
               <h3 className="font-display text-2xl mb-6">We do not simply prepare figures. We help organisations understand their financial position, meet their obligations and improve the way they manage finance and compliance.</h3>
-              <Link to="/contact" className="inline-flex items-center gap-2 font-body mt-4" style={{ color: 'var(--p-teal-light)' }}>Work with us <ArrowRight size={16} /></Link>
+              <StartConversationButton />
             </div>
           </div>
         </div>

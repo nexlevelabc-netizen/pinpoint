@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Church, Building2, HandHeart, Briefcase, Quote, Star } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
+import { useContactPanel } from '../components/ContactPanelContext';
 
 const clientRows = [
   [
@@ -30,10 +30,10 @@ const clientRows = [
 ];
 
 const categories = [
-  { icon: Building2, label: 'Housing Providers', count: '10+', color: 'var(--p-blue)' },
-  { icon: Church, label: 'Ministries', count: '2', color: 'var(--p-green)' },
-  { icon: HandHeart, label: 'Care Services', count: '2', color: 'var(--p-teal)' },
-  { icon: Briefcase, label: 'Businesses', count: '3', color: 'var(--p-purple)' },
+  { label: 'Housing Providers', count: '10+', color: 'var(--p-blue)' },
+  { label: 'Ministries', count: '2', color: 'var(--p-green)' },
+  { label: 'Care Services', count: '2', color: 'var(--p-teal)' },
+  { label: 'Businesses', count: '3', color: 'var(--p-purple)' },
 ];
 
 const testimonials = [
@@ -85,21 +85,26 @@ function MarqueeRow({ clients, direction = 'left' }: { clients: typeof clientRow
   );
 }
 
+function BecomeClientButton() {
+  const { openPanel } = useContactPanel();
+  return (
+    <button onClick={openPanel} className="btn-primary">
+      Become a Client <ArrowRight size={16} />
+    </button>
+  );
+}
+
 export default function Clients() {
   return (
     <>
-      <section className="relative overflow-hidden pt-[100px]" style={{ background: 'linear-gradient(135deg, #0F7EA5 0%, #1A9BC7 50%, #2DB5E0 100%)' }}>
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-[15%] w-72 h-72 rounded-full bg-white/5" />
-          <div className="absolute bottom-10 left-[10%] w-48 h-48 rounded-full bg-white/5" />
-        </div>
-        <div className="relative z-10 container-pinpoint py-20 md:py-28">
-          <nav className="mb-8"><ol className="flex items-center gap-2 font-body text-xs text-white/90"><li><Link to="/" className="hover:text-white transition-colors">Home</Link></li><span className="text-white/30">/</span><li className="text-white/95">Our Clients</li></ol></nav>
-          <div className="max-w-3xl">
-            <h1 className="font-display text-white mb-4">Our Clients</h1>
-            <p className="font-body text-lg text-white/95 leading-relaxed max-w-2xl">We are proud to support a diverse range of charities, non-profit organisations and purpose-led businesses across England and Wales.</p>
-          </div>
-        </div>
+      {/* Hero - image only */}
+      <section className="relative overflow-hidden" style={{ height: '420px' }}>
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'url(images/hero-clients.png) center/cover no-repeat',
+          }}
+        />
       </section>
 
       <section className="py-16 md:py-20 bg-white">
@@ -139,10 +144,13 @@ export default function Clients() {
             <div className="divider-line mx-auto" />
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((cat) => (
+            {categories.map((cat, i) => (
               <div key={cat.label} className="text-center p-8 rounded-2xl card-hover" style={{ background: 'var(--p-surface)' }}>
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: cat.color }}>
-                  <cat.icon size={20} className="text-white" />
+                <div className="mb-4 flex justify-center">
+                  {i === 0 && <img src="images/clients-housing.png" alt="Housing" className="w-34 h-34 object-contain" />}
+                  {i === 1 && <img src="images/clients-ministry.png" alt="Ministry" className="w-34 h-34 object-contain" />}
+                  {i === 2 && <img src="images/clients-care.png" alt="Care" className="w-34 h-34 object-contain" />}
+                  {i === 3 && <img src="images/clients-business.png" alt="Business" className="w-34 h-34 object-contain" />}
                 </div>
                 <span className="font-display text-3xl font-semibold">{cat.count}</span>
                 <p className="font-body text-sm mt-2">{cat.label}</p>
@@ -166,7 +174,7 @@ export default function Clients() {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t) => (
               <div key={t.author} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
-                <Quote size={24} className="mb-4" style={{ color: 'var(--p-teal-light)' }} />
+                <div className="mb-4 text-4xl leading-none text-white/40">"</div>
                 <p className="font-body text-white/90 leading-relaxed mb-6">{t.quote}</p>
                 <div className="flex items-center gap-1 mb-2">{[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-[#D4A843] fill-current" />)}</div>
                 <p className="font-display text-white font-medium">{t.author}</p>
@@ -181,7 +189,7 @@ export default function Clients() {
         <div className="container-pinpoint text-center">
           <h2>Join our growing list of satisfied clients</h2>
           <p className="font-body mb-8 max-w-xl mx-auto">Whether you are a small charity or a larger non-profit organisation, we can provide the financial and compliance support you need.</p>
-          <Link to="/contact" className="btn-primary">Become a Client <ArrowRight size={16} /></Link>
+          <BecomeClientButton />
         </div>
       </section>
     </>

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, GraduationCap, Users, BookOpen, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
+import { useContactPanel } from '../components/ContactPanelContext';
 import PageHero from '../components/PageHero';
 
 const areas = [
@@ -16,15 +16,28 @@ const areas = [
 ];
 
 const audiences = [
-  { icon: Users, title: 'Trustees', desc: 'Training to help trustees carry out their financial and governance responsibilities with confidence.', color: 'var(--p-blue)' },
-  { icon: BookOpen, title: 'Management Teams', desc: 'Support for senior managers who oversee financial operations and reporting.', color: 'var(--p-green)' },
-  { icon: GraduationCap, title: 'Finance Staff', desc: 'Practical guidance for finance teams handling day-to-day accounting and compliance tasks.', color: 'var(--p-blue)' },
+  { title: 'Trustees', desc: 'Training to help trustees carry out their financial and governance responsibilities with confidence.', color: 'var(--p-blue)' },
+  { title: 'Management Teams', desc: 'Support for senior managers who oversee financial operations and reporting.', color: 'var(--p-green)' },
+  { title: 'Finance Staff', desc: 'Practical guidance for finance teams handling day-to-day accounting and compliance tasks.', color: 'var(--p-blue)' },
 ];
+
+function ArrangeTrainingButton() {
+  const { openPanel } = useContactPanel();
+  return (
+    <button
+      onClick={openPanel}
+      className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105"
+      style={{ background: 'var(--p-blue)', color: 'white' }}
+    >
+      Arrange Training <ArrowRight size={16} />
+    </button>
+  );
+}
 
 export default function Training() {
   return (
     <>
-      <PageHero title="Training for Staff & Trustees" subtitle="Practical training on key areas of charity finance, governance and compliance designed to build knowledge and confidence." variant="teal"
+      <PageHero title="Training for Staff & Trustees" subtitle="Practical training on key areas of charity finance, governance and compliance designed to build knowledge and confidence." variant="teal" bgImage="images/hero-training.png"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: 'Training', href: '/training' }]} />
 
       <section className="py-16 md:py-20 bg-white">
@@ -83,10 +96,12 @@ export default function Training() {
             <div className="divider-line mx-auto" />
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {audiences.map((a) => (
+            {audiences.map((a, i) => (
               <div key={a.title} className="text-center p-8 rounded-2xl" style={{ background: 'var(--p-surface)' }}>
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 mx-auto" style={{ background: a.color }}>
-                  <a.icon size={22} />
+                <div className="mb-6 mx-auto flex justify-center">
+                  {i === 0 && <img src="images/training-trustees.png" alt="Trustees" className="w-26 h-26 object-contain" />}
+                  {i === 1 && <img src="images/training-management.png" alt="Management" className="w-26 h-26 object-contain" />}
+                  {i === 2 && <img src="images/training-finance.png" alt="Finance" className="w-206 h-26 object-contain" />}
                 </div>
                 <h3 className="font-display text-xl mb-3">{a.title}</h3>
                 <p className="font-body text-sm leading-relaxed">{a.desc}</p>
@@ -118,14 +133,14 @@ export default function Training() {
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-10 rounded-3xl border border-white/20">
-              <GraduationCap size={40} className="mb-6" style={{ color: 'var(--p-teal-light)' }} />
+              <div className="mb-6">
+                <img src="images/training-team.png" alt="Team" className="w-50 h-36 object-contain" />
+              </div>
               <h3 className="font-display text-2xl text-white mb-4">Invest in Your Team's Knowledge</h3>
               <p className="font-body text-white/95 leading-relaxed mb-6">
                 Well-trained trustees and staff are the foundation of a well-governed charity. Our training helps organisations build internal capacity and confidence in managing their financial and compliance responsibilities.
               </p>
-              <Link to="/contact" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-body text-sm font-semibold transition-all hover:scale-105" style={{ background: 'var(--p-blue)', color: 'white' }}>
-                Arrange Training <ArrowRight size={16} />
-              </Link>
+              <ArrangeTrainingButton />
             </div>
           </div>
         </div>
