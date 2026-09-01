@@ -12,8 +12,8 @@ function GetInTouchButton() {
 }
 
 const serviceColors = [
-  { bg: 'var(--p-blue)', title: 'Accounting & Bookkeeping', desc: 'Day-to-day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
-  { bg: 'var(--p-green)', title: 'Year-End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
+  { bg: 'var(--p-blue)', title: 'Accounting & Bookkeeping', desc: 'Day to day bookkeeping, bank reconciliations, management accounts, payroll support and VAT.' },
+  { bg: 'var(--p-green)', title: 'Year End Accounts', desc: 'Annual accounts prepared in line with Charity SORP, Companies House and Charity Commission requirements.' },
   { bg: 'var(--p-blue)', title: 'Charity Compliance', desc: 'Governance advice, regulatory submissions, internal control reviews and Charity Commission support.' },
   { bg: 'var(--p-teal)', title: 'Audit Support', desc: 'Preparing financial statements, audit schedules and liaising with auditors and independent examiners.' },
   { bg: 'var(--p-purple)', title: 'Training', desc: 'Practical training for trustees and staff on charity finance, governance and compliance.' },
@@ -167,7 +167,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { num: '01', title: 'Specialist Charity Knowledge', desc: 'Deep understanding of charity accounting, SORP requirements, and the unique regulatory environment charities operate in.', color: 'var(--p-blue)' },
-              { num: '02', title: 'Practical & Professional', desc: 'We take a hands-on, client-focused approach ensuring our advice is practical, understandable and tailored to your needs.', color: 'var(--p-green)' },
+              { num: '02', title: 'Practical & Professional', desc: 'We take a hands on, client focused approach ensuring our advice is practical, understandable and tailored to your needs.', color: 'var(--p-green)' },
               { num: '03', title: 'Full Compliance Support', desc: 'From governance advice to Charity Commission inquiries, we help you meet your obligations and demonstrate accountability.', color: 'var(--p-blue)' },
             ].map((item) => (
               <div key={item.num} className="bg-white rounded-2xl p-8 text-center shadow-sm">
@@ -196,7 +196,7 @@ export default function Home() {
             Let us help your organisation stay compliant, financially organised and accountable
           </h2>
           <p className="font-body text-white/95 mb-8 max-w-xl mx-auto">
-            Whether you need ongoing bookkeeping, year-end accounts, compliance advice or training, we can provide a service tailored to your needs.
+            Whether you need ongoing bookkeeping, year end accounts, compliance advice or training, we can provide a service tailored to your needs.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <GetInTouchButton />
