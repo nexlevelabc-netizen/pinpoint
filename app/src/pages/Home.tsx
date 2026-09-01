@@ -133,7 +133,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
             <div className="lg:col-span-5 flex flex-col justify-center">
               <p className="section-label">Who We Support</p>
-              <h2>Serving Charities, Non-Profits & Purpose-Led Businesses</h2>
+              <h2>Serving Charities, Non Profits & Purpose Led Businesses</h2>
               <div className="divider-line mb-6" />
               <p className="font-body leading-relaxed mb-8">
                 We work with a wide range of organisations that need more than basic accounting support. From registered charities to social enterprises, we provide tailored financial and compliance services.
@@ -160,7 +160,7 @@ export default function Home() {
         <div className="container-pinpoint">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="section-label">Why Choose Us</p>
-            <h2>Professional, Reliable & Client-Focused</h2>
+            <h2>Professional, Reliable & Client Focused</h2>
             <div className="divider-line mx-auto mb-6" />
           </div>
 

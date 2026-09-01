@@ -7,7 +7,7 @@ const serviceColors = ['var(--p-blue)', 'var(--p-green)', 'var(--p-blue)', 'var(
 const categories = [
   {
     title: 'Accounting and Bookkeeping',
-    desc: 'Reliable accounting and bookkeeping support to help organisations maintain accurate and up-to-date financial records.',
+    desc: 'Reliable accounting and bookkeeping support to help organisations maintain accurate and up to date financial records.',
     items: ['Day-to-day bookkeeping', 'Bank reconciliations', 'Management accounts', 'Financial reporting', 'Payroll support', 'VAT support where applicable', 'Review of income and expenditure', 'Monitoring of restricted and unrestricted funds', 'Support with financial records and audit preparation'],
   },
   {
@@ -21,8 +21,8 @@ const categories = [
     items: ['Setting up accounting software', 'Creating chart of accounts', 'Setting up departments, funds and projects', 'Designing reporting structures', 'Training staff on accounting systems', 'Reviewing existing accounting processes', 'Improving bookkeeping workflows', 'Supporting cloud-based accounting solutions'],
   },
   {
-    title: 'Audit Support for Year-End Financial Statements',
-    desc: 'Support to help charities and organisations prepare for the year-end audit or independent examination process.',
+    title: 'Audit Support for Year End Financial Statements',
+    desc: 'Support to help charities and organisations prepare for the year end audit or independent examination process.',
     items: ['Preparing year-end financial statements', 'Preparing audit schedules and supporting documents', 'Reviewing accounting records before audit', 'Reconciling bank accounts, control accounts and key balances', 'Preparing fixed asset registers and depreciation schedules', 'Supporting restricted and unrestricted fund reporting', 'Preparing working papers for auditors or independent examiners', 'Liaising with auditors, independent examiners and accountants', 'Responding to audit queries', 'Helping management and trustees address audit findings and recommendations'],
   },
 ];
@@ -30,7 +30,7 @@ const categories = [
 export default function Services() {
   return (
     <>
-      <PageHero title="Our Services" subtitle="Professional accounting, financial management and compliance services tailored to charities, non-profits and purpose-led businesses." variant="blue" bgImage="images/hero-services.jpg"
+      <PageHero title="Our Services" subtitle="Professional accounting, financial management and compliance services tailored to charities, non profits and purpose-led businesses." variant="blue" bgImage="images/hero-services.jpg"
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Our Services', href: '/services' }]} />
 
       <section className="py-16 md:py-20 bg-white">
