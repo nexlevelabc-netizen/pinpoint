@@ -80,7 +80,7 @@ export default function Compliance() {
             <h2>Navigating Regulatory Requirements with Confidence</h2>
             <div className="divider-line mb-6" />
             <p className="font-body leading-relaxed mb-4">
-              Charities and non-profit organisations must comply with a wide range of legal, regulatory and governance requirements. We provide practical compliance consultancy to help organisations understand and meet their obligations.
+              Charities and non profit organisations must comply with a wide range of legal, regulatory and governance requirements. We provide practical compliance consultancy to help organisations understand and meet their obligations.
             </p>
             <p className="font-body leading-relaxed">
               We help organisations strengthen their governance framework and demonstrate accountability to trustees, regulators, funders and stakeholders.

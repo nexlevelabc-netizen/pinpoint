@@ -45,7 +45,7 @@ export default function Training() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <p className="section-label">Building Knowledge</p>
-              <h2>Practical Training for Charities & Non-Profits</h2>
+              <h2>Practical Training for Charities & Non Profits</h2>
               <div className="divider-line mb-6" />
               <p className="font-body leading-relaxed mb-4">
                 We provide practical training for staff, trustees and management teams on key areas of charity finance, governance and compliance.
