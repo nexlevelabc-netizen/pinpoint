@@ -86,10 +86,10 @@ export default function Navbar() {
 
       {/* Main nav */}
       <nav className="container-pinpoint">
-        <div className="flex items-center justify-between h-[68px]">
+        <div className="flex items-center justify-between h-[84px]">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="images/logo-navbar.png" alt="Pinpoint Finance and Compliance Ltd" className="h-24 w-auto object-contain" />
+            <img src="images/logo-navbar.png" alt="Pinpoint Finance and Compliance Ltd" className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop nav */}
