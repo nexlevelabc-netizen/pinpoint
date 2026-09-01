@@ -77,8 +77,8 @@ export default function Navbar() {
             </button>
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:info@pinpointfinance.co.uk" className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors">
-              <Mail size={11} /> <span>info@pinpointfinance.co.uk</span>
+            <a href="mailto:info@pinpointfinance.com" className="flex items-center gap-1.5 text-xs font-body text-white/90 hover:text-white transition-colors">
+              <Mail size={11} /> <span>info@pinpointfinance.com</span>
             </a>
           </div>
         </div>

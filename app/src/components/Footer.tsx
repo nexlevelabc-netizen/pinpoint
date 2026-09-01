@@ -55,11 +55,11 @@ export default function Footer() {
               Professional accounting, financial management and compliance services for charities, non-profits and purpose-led businesses.
             </p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+440000000000" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
-                <Phone size={14} /> +44 (0) 0000 000 000
+              <a href="tel:+447952900696" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
+                <Phone size={14} /> +44 (7952900696)
               </a>
               <a href="mailto:info@pinpointfinance.co.uk" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
-                <Mail size={14} /> info@pinpointfinance.co.uk
+                <Mail size={14} /> info@pinpointfinance.com
               </a>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function Footer() {
               <MapPin size={14} className="mt-1 shrink-0" style={{ color: 'var(--p-teal-light)' }} />
               <div>
                 <p className="font-body text-sm text-white/60">Registered in England and Wales</p>
-                <p className="font-body text-sm text-white/60">Company Number: [Insert Number]</p>
+                <p className="font-body text-sm text-white/60">Company Number: 17187324</p>
               </div>
             </div>
             <p className="font-body text-xs text-white/40 leading-relaxed mt-6 pl-3 border-l border-white/10">
