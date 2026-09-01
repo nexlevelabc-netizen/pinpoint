@@ -14,6 +14,7 @@ import Training from './pages/Training';
 import WhoWeSupport from './pages/WhoWeSupport';
 import WhyChooseUs from './pages/WhyChooseUs';
 import Clients from './pages/Clients';
+import Contact from './pages/Contact';  // Add this line
 import Partners from './pages/Partners';
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
           <Route path="/clients" element={<Clients />} />
           <Route path="/partners" element={<Partners />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
-          <Route path="/contact" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer />

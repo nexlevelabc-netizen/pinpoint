@@ -50,14 +50,14 @@ export default function WhyChooseUs() {
             {reasons.map((r, i) => (
               <div key={r.title} className="bg-white rounded-2xl p-8 card-hover">
                 <div className="mb-5">
-                  {i === 0 && <img src="images/why-specialist.png" alt="Specialist" className="w-20 h-20 object-contain" />}
-                  {i === 1 && <img src="images/why-compliance.png" alt="Compliance" className="w-20 h-20 object-contain" />}
-                  {i === 2 && <img src="images/why-confidential.png" alt="Confidential" className="w-20 h-20 object-contain" />}
-                  {i === 3 && <img src="images/why-communication.png" alt="Communication" className="w-20 h-20 object-contain" />}
-                  {i === 4 && <img src="images/why-tailored.png" alt="Tailored" className="w-20 h-20 object-contain" />}
-                  {i === 5 && <img src="images/why-comprehensive.png" alt="Comprehensive" className="w-20 h-20 object-contain" />}
-                  {i === 6 && <img src="images/why-improvement.png" alt="Improvement" className="w-20 h-20 object-contain" />}
-                  {i === 7 && <img src="images/why-reliable.png" alt="Reliable" className="w-20 h-20 object-contain" />}
+                  {i === 0 && <img src="images/why-specialist.png" alt="Specialist" className="w-28 h-28 object-contain" />}
+                  {i === 1 && <img src="images/why-compliance.png" alt="Compliance" className="w-28 h-28 object-contain" />}
+                  {i === 2 && <img src="images/why-confidential.png" alt="Confidential" className="w-28 h-28 object-contain" />}
+                  {i === 3 && <img src="images/why-communication.png" alt="Communication" className="w-28 h-28 object-contain" />}
+                  {i === 4 && <img src="images/why-tailored.png" alt="Tailored" className="w-28 h-28 object-contain" />}
+                  {i === 5 && <img src="images/why-comprehensive.png" alt="Comprehensive" className="w-28 h-28 object-contain" />}
+                  {i === 6 && <img src="images/why-improvement.png" alt="Improvement" className="w-28 h-28 object-contain" />}
+                  {i === 7 && <img src="images/why-reliable.png" alt="Reliable" className="w-28 h-28 object-contain" />}
                 </div>
                 <h3 className="font-display text-lg mb-2">{r.title}</h3>
                 <p className="font-body text-sm leading-relaxed">{r.desc}</p>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, ArrowRight } from 'lucide-react';
+import { useContactPanel } from './ContactPanelContext';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -20,6 +21,8 @@ const services = [
 ];
 
 export default function Footer() {
+  const { openPanel } = useContactPanel();
+
   return (
     <footer style={{ background: 'linear-gradient(180deg, #0D1219 0%, #070A0F 100%)' }}>
       {/* CTA Banner */}
@@ -32,11 +35,11 @@ export default function Footer() {
                 Ready to strengthen your organisation&apos;s financial foundation?
               </h3>
             </div>
-            <Link to="/contact"
+            <button onClick={openPanel}
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wide whitespace-nowrap transition-all hover:scale-105"
               style={{ background: 'var(--p-green)', color: 'white' }}>
               Contact Us <ArrowRight size={16} />
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -58,8 +61,8 @@ export default function Footer() {
               <a href="tel:+447952900696" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
                 <Phone size={14} /> +44 (7952900696)
               </a>
-              <a href="mailto:info@pinpointfinance.co.uk" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
-                <Mail size={14} /> info@pinpointfinance.com
+              <a href="mailto:info@pinpointaccounts.co.uk" className="flex items-center gap-2 text-sm font-body text-white/60 hover:text-white transition-colors">
+                <Mail size={14} /> info@pinpointaccounts.com
               </a>
             </div>
           </div>

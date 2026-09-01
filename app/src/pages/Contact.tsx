@@ -27,8 +27,8 @@ export default function Contact() {
         <div className="container-pinpoint">
           <div className="grid md:grid-cols-3 gap-6 -mt-28 relative z-20">
             {[
-              { icon: Phone, title: 'Telephone', lines: ['+44 (0) 0000 000 000'], href: 'tel:+440000000000', color: 'var(--p-blue)' },
-              { icon: Mail, title: 'Email', lines: ['info@pinpointfinance.co.uk'], href: 'mailto:info@pinpointfinance.co.uk', color: 'var(--p-green)' },
+              { icon: Phone, title: 'Telephone', lines: ['+44 7952900696'], href: 'tel:+447952900696', color: 'var(--p-blue)' },
+              { icon: Mail, title: 'Email', lines: ['info@pinpointaccounts.com'], href: 'mailto:info@pinpointaccounts.com', color: 'var(--p-green)' },
               { icon: MapPin, title: 'Address', lines: ['Registered in England and Wales'], href: '#', color: 'var(--p-blue)' },
             ].map((card) => (
               <a key={card.title} href={card.href} className="rounded-2xl p-8 text-white text-center group transition-all hover:scale-[1.02]" style={{ background: card.color }}>
@@ -128,7 +128,7 @@ export default function Contact() {
                   A company registered in England and Wales providing professional accounting, financial management and compliance services to charities, non-profits and purpose-led businesses.
                 </p>
                 <div className="flex items-center gap-2 font-body text-sm" style={{ color: 'var(--p-teal-light)' }}>
-                  <Mail size={14} /> info@pinpointfinance.co.uk
+                  <Mail size={14} /> info@pinpointaccounts.co.uk
                 </div>
               </div>
             </div>
